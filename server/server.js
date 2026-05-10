@@ -3,10 +3,15 @@ import cors from "cors"; // used to connect backend and frontend
 import 'dotenv/config';  // used to store involvement var in backend 
 import cookieParser from "cookie-parser"; 
 
+import connectDB from "./config/mongodb.js";
+
 
 // making app 
 const app = express();
 const port = process.env.PORT || 4000
+
+//add connectDB function
+connectDB();
 
 app.use(express.json());
 app.use(cookieParser());
